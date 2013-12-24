@@ -1047,9 +1047,20 @@ window.Chart = function(context){
 		function drawBars(animPc){
 			ctx.lineWidth = config.barStrokeWidth;
 			for (var i=0; i<data.datasets.length; i++){
+				for (var j=0; j<data.datasets[i].data.length; j++){
+					//selecting if a uniquely colored column exists
+					//selecting if a uniquely colored column exists
 					ctx.fillStyle = data.datasets[i].fillColor;
 					ctx.strokeStyle = data.datasets[i].strokeColor;
-				for (var j=0; j<data.datasets[i].data.length; j++){
+					if(config.uniqueColumn){
+						if(config.uniqueSet.indexOf(i) > -1){
+							if(config.uniqueValue.indexOf(j) > -1){
+								ctx.fillStyle = config.uniqueColumnFillColor;
+								ctx.strokeStyle = config.uniqueColumnStrokeColor;
+							}
+						}
+					}
+
 					var barOffset = yAxisPosX + config.barValueSpacing + valueHop*j + barWidth*i + config.barDatasetSpacing*i + config.barStrokeWidth*i;
 					
 					ctx.beginPath();

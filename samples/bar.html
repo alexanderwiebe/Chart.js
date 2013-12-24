@@ -31,8 +31,15 @@
 			]
 			
 		}
+		var barChartOptions = {
+			uniqueColumn: true
+			,uniqueSet: [0,1]
+			,uniqueValue: [0,6]
+			,uniqueColumnFillColor: "rgba(50,50,50,0.5)"
+			,uniqueColumnStrokeColor: "rgba(50,50,50,0.5)"
+		}
 
-	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData);
+	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData,barChartOptions);
 	
 	</script>
 	</body>
