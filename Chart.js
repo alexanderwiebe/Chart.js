@@ -1049,7 +1049,6 @@ window.Chart = function(context){
 			for (var i=0; i<data.datasets.length; i++){
 				for (var j=0; j<data.datasets[i].data.length; j++){
 					//selecting if a uniquely colored column exists
-					//selecting if a uniquely colored column exists
 					ctx.fillStyle = data.datasets[i].fillColor;
 					ctx.strokeStyle = data.datasets[i].strokeColor;
 					if(config.uniqueColumn){
